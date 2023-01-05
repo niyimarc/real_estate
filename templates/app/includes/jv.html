@@ -1,0 +1,220 @@
+{% load static %}
+<!-- ======= Property Single ======= -->
+    <section class="property-single nav-arrow-b">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="property-contact">
+                
+                  <form class="form-a" action="" method="post" enctype="multipart/form-data">
+                    <div class="row">
+                      <div class="col-md-6 mb-1">
+                        <label>First Name<span class="w3l-star"> * </span></label>		
+                        <div class="form-group">
+                          <input type="text" name="first_name" value="{% if current_user.is_authenticated %}{{current_user.first_name}}{% endif %}" class="form-control form-control-lg form-control-a mb-3" id="inputName" placeholder="Name *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                      <label>Last Name<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="last_name" value="{% if current_user.is_authenticated %}{{current_user.last_name}}{% endif %}" class="form-control form-control-lg form-control-a mb-3" id="inputName" placeholder="Name *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Email Address<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="email" name="email" value="{% if current_user.is_authenticated %}{{current_user.email}}{% endif %}" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Email *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Phone Number<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="tel" name="phone" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Phone *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <label>Company Name<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="company_name" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Company Name *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <label>Property Address<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="property_address" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Property Address *">
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Bed Count<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="bedrooms" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Bed Count *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Bath Count<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="bathrooms" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Bath Count *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <label>Sq. Ft<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="sq_footage" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Sq. Ft *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Year Built<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="year_build" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Year Built *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Year of Roof<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="year_roof" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Year of Roof *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Year of HVAC<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="year_hvac" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Year of HVAC *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Acquisition Price<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="acquisition_price" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Acquisition Price *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Asking Price<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="asking_price" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Asking Price *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>ARV</label>
+                        <div class="form-group">
+                          <input type="number" name="arv" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="ARV">
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Comp 1 Link<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="url" name="comp1_link" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Comp 1 Link*" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                      <label>Comp 1 Price<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="number" name="comp1_price" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Comp 1 Price*" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Comp 2 Link</label>
+                        <div class="form-group">
+                          <input type="url" name="comp2_link" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Comp 2 Link">
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Comp 2 Price</label>
+                        <div class="form-group">
+                          <input type="number" name="comp2_price" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Comp 2 Price">
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Comp 3 Link</label>
+                        <div class="form-group">
+                          <input type="url" name="comp3_link" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Comp 3 Link">
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Comp 3 Price</label>
+                        <div class="form-group">
+                          <input type="number" name="comp3_price" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Comp 3 Price">
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <label>Photo Link<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="url" name="photo_link" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Photo Link *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Inspection Date<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="date" name="inspection_date" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Inspection Date *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Closing Date<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="date" name="closing_date" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Closing Date *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>Occupancy<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="occupancy" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Occupancy *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>HOA<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <select name="hoa" class="form-control form-control-lg form-control-a mb-3">
+                            <option selected disabled>HOA</option>
+                            <option value="YES">Yes</option>
+                            <option value="NO">No</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>How much?<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="how_much" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="How much?">
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-1">
+                        <label>How Often is it paid?<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <select name="payment_plan" class="form-control form-control-lg form-control-a mb-3">
+                            <option selected disabled>How Often is it paid?</option>
+                            <option value="MONTHLY">MONTHLY</option>
+                            <option value="QUATERLY">QUATERLY</option>
+                            <option value="ANNUALLY">ANNUALLY</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <label>Access<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="access" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Access *">
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <label>Date Purchase Agreement was signed<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="date" format="yyyy-mm-dd" name="date_aggreement" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Date Purchase Agreement was signed *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                      <label>Original Purchase Agreement<span class="w3l-star"> * </span></label>
+                      <label>Upload Original PA file using the following file name format:</label>
+                      <label>Address_Original PA. (i.e.: 5534 St Joe Rd, Fort Wayne, IN 46835,_Original PA)</label>
+                        <div class="form-group">
+                          <input type="file" name="agreement_document" value="" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Original Purchase Agreement *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mb-1">
+                        <div class="form-group">
+                          <textarea id="textMessage" name="property_note" class="form-control mb-3" placeholder="Property Notes" cols="45" rows="8"></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12 mt-3">
+                      {% csrf_token %}
+                        <button type="submit" class="btn btn-a">Send Offer</button>
+          </div>
+          </form>
+        </div>
+    </div>
+</section>

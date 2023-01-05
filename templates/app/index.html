@@ -1,0 +1,25 @@
+{% extends "app/base.html" %}
+
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+    <!-- ======= Intro Section ======= -->
+    {% include "app/includes/slidder.html" %}
+    <!-- End Intro Section -->
+    <!-- ======= Services Section ======= -->
+    {% include "app/includes/services.html" %}
+    <!-- End Services Section -->
+
+    <!-- ======= Latest Properties Section ======= -->
+    {% include "app/includes/latest_properties.html" %}
+    <!-- End Latest Properties Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    {% include "app/includes/testimonial.html" %}
+    <!-- End Testimonials Section -->
+
+{% endblock %}
