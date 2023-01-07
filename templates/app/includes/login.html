@@ -1,0 +1,32 @@
+{% load static %}
+<!-- ======= Property Single ======= -->
+    <section class="property-single nav-arrow-b">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="property-contact">
+                
+                  <form class="form-a" method="post">
+                    <div class="row">
+                      <div class="col-md-8 mb-1">
+                        <label>Username<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="text" name="username" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Username *" required>
+                        </div>
+                      </div>
+                      <div class="col-md-8 mb-1">
+                        <label>Password<span class="w3l-star"> * </span></label>
+                        <div class="form-group">
+                          <input type="password" name="password" class="form-control form-control-lg form-control-a mb-3" id="inputEmail1" placeholder="Password *" required>
+                        </div>
+                      </div>
+                      
+                      <div class="col-md-12 mt-3">
+                      {% csrf_token %}
+                        <button type="submit" class="btn btn-a">Login</button>
+                      </div>
+                      <p>You don't have an account? <a href="{% url 'register' %}">Register</a></p>
+          </div>
+        </div>
+    </div>
+</section>

@@ -1,12 +1,46 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import Property, Testimonial, User
 from django.views.generic import ListView, DetailView
 from django.contrib import messages
 from django.http import HttpResponseRedirect
-from app.forms import ContactForm, OfferForm, BecomeBuyerForm, JointVentureForm
-from django.urls import reverse_lazy
+from app.forms import ContactForm, OfferForm, BecomeBuyerForm, JointVentureForm, RegForm, EditUserForm
+from django.contrib.auth.decorators import login_required
+
+
+def login_excluded(redirect_to):
+    """ This decorator kicks authenticated users out of a view """ 
+    def _method_wrapper(view_method):
+        def _arguments_wrapper(request, *args, **kwargs):
+            if request.user.is_authenticated:
+                return redirect(redirect_to) 
+            return view_method(request, *args, **kwargs)
+        return _arguments_wrapper
+    return _method_wrapper
 
 # Create your views here.
+@login_excluded('login')
+def register(request):
+    if request.method == "POST":
+        regform = RegForm(request.POST)
+        if regform.is_valid():
+            regform.save(commit=True)
+            return redirect("home")
+    else:
+        regform = RegForm()
+    return render(request, 'app/register.html', {"regform": regform})
+
+
+@login_required
+def edit_form(request):
+    if request.method == 'POST':
+        edit_form = EditUserForm(request.POST, instance=request.user)
+        if edit_form.is_valid():
+            edit_form.save()
+            messages.success(request, 'User updated successfully')
+    else:
+        edit_form = EditUserForm(instance=request.user)
+    return render(request, 'app/edit_form.html', {"edit_key": edit_form})
+
 def index(request):
     property = Property.objects.all()
     testitomy = Testimonial.objects.all()
@@ -63,7 +97,7 @@ def property_detail(request, slug):
                                            'current_user': current_user,
                                            'offer_form': offer_form})
     
-    
+@login_required    
 def become_a_buyer(request):
     current_user = request.user
     if request.method == "POST":
@@ -78,6 +112,7 @@ def become_a_buyer(request):
         becomebuyerform = BecomeBuyerForm()
     return render(request, "app/become_a_buyer.html", {'navbar': 'send_offer', 'current_user': current_user})
 
+@login_required
 def jv(request):
     current_user = request.user
     if request.method == "POST":
@@ -93,11 +128,10 @@ def jv(request):
     return render(request, "app/jv.html", {'navbar': 'jvform', 'current_user': current_user})
 
 def privacy_policy(request):
-    current_user = request.user
-    return render(request, "app/privacy.html", {'current_user': current_user}) 
+    return render(request, "app/privacy.html") 
+
 def terms_and_conditions(request):
-    current_user = request.user
-    return render(request, "app/terms_and_conditions.html", {'current_user': current_user}) 
+    return render(request, "app/terms_and_conditions.html") 
+
 def about(request):
-    current_user = request.user
-    return render(request, "app/about.html", {'current_user': current_user}) 
+    return render(request, "app/about.html") 

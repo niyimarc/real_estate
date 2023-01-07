@@ -22,20 +22,25 @@
             <a class="nav-link {% if navbar == 'contact' %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if navbar == 'send_offer' %}active{% endif %}" href="{% url 'become_a_buyer' %}">Send Offer</a>
+            <a class="nav-link {% if navbar == 'send_offer' %}active{% endif %}" href="{% url 'become_a_buyer' %}">Become VIP Buyer</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if navbar == 'jvform' %}active{% endif %}" href="{% url 'jvform' %}">JV Form</a>
           </li>
+          {% if user.is_authenticated %}
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="bi bi-person"></span> Hi, {{current_user.first_name}}</a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="bi bi-person"></span> Hi, {{request.user.first_name}}</a>
             <div class="dropdown-menu">
-              <a class="dropdown-item " href="#">Profile</a>
+              <a class="dropdown-item " href="{% url 'profile' %}">Profile</a>
               <a class="dropdown-item " href="#">Change Password</a>
-              <a class="dropdown-item " href="#">Offer Sent</a>
-              <a class="dropdown-item " href="#">Log Out</a>
+              <a class="dropdown-item " href="{% url 'logout' %}">Log Out</a>
             </div>
           </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+          </li>
+          {% endif %}
         </ul>
       </div>
 

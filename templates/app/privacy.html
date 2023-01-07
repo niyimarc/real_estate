@@ -3,7 +3,8 @@
 {% load static %}
 
 {% block title %}
-Privacy
+Privacy & Policy || InvestToBuild
+
 {% endblock %}
 
 {% block content %}
@@ -13,8 +14,7 @@ Privacy
         <div class="row">
           <div class="col-md-12 col-lg-8">
             <div class="title-single-box">
-              <h1 class="title-single">Privacy</h1>
-              <span class="color-text-a">All fields must be filled out for Joint Venture Review. Profit split will be 60/40, 40% going to joint venturer. <span style="color:red">Must have 14 days left in inspection period to be considered.</span></span>
+              <h1 class="title-single">Privacy & Policy</h1>
             </div>
           </div>
           <div class="col-md-12 col-lg-4">
@@ -32,6 +32,6 @@ Privacy
         </div>
       </div>
     </section><!-- End Intro Single-->
-    {% comment %} {% include "app/includes/jv.html" %} {% endcomment %}
+    {% include "app/includes/privacy.html" %}
 
 {% endblock %}

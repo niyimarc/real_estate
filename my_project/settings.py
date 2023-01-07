@@ -145,3 +145,7 @@ STATICFILES_DIRS = [
 ]
 
 DATE_INPUT_FORMATS = ('%d-%m-%Y','%Y-%m-%d')
+
+# the user will be redirected here if logged in successfully 
+LOGIN_REDIRECT_URL = 'property'
+LOGIN_URL = 'login'

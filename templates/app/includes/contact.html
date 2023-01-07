@@ -16,21 +16,25 @@
                 <form method="post" role="form">
                   <div class="row">
                     <div class="col-md-6 mb-3">
+                    <label>Full Name<span class="w3l-star"> * </span></label>
                       <div class="form-group">
-                        <input type="text" name="name" class="form-control form-control-lg form-control-a" placeholder="Your Name" require="false">
+                        <input type="text" name="name" {% if current_user.is_authenticated %} value="{{current_user.first_name}} {{current_user.last_name}}" {% endif %} class="form-control form-control-lg form-control-a" placeholder="Full Name" require="false">
                       </div>
                     </div>
                     <div class="col-md-6 mb-3">
+                    <label>Email Address<span class="w3l-star"> * </span></label>
                       <div class="form-group">
-                        <input name="email" type="email" class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
+                        <input name="email" type="email" {% if current_user.is_authenticated %} value="{{current_user.email}}" {% endif %} class="form-control form-control-lg form-control-a" placeholder="Your Email" required>
                       </div>
                     </div>
                     <div class="col-md-12 mb-3">
+                    <label>Subject<span class="w3l-star"> * </span></label>
                       <div class="form-group">
                         <input type="text" name="subject" class="form-control form-control-lg form-control-a" placeholder="Subject" required>
                       </div>
                     </div>
                     <div class="col-md-12">
+                    <label>Message<span class="w3l-star"> * </span></label>
                       <div class="form-group">
                         <textarea name="message" class="form-control" name="message" cols="45" rows="8" placeholder="Message" required></textarea>
                       </div>
