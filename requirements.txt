@@ -1,0 +1,38 @@
+asgiref==3.6.0
+brotlipy==0.7.0
+certifi==2021.10.8
+cffi @ file:///C:/ci/cffi_1636542104204/work
+charset-normalizer @ file:///tmp/build/80754af9/charset-normalizer_1630003229654/work
+colorama==0.4.6
+conda==4.11.0
+conda-content-trust @ file:///tmp/build/80754af9/conda-content-trust_1617045594566/work
+conda-package-handling @ file:///C:/ci/conda-package-handling_1618262352237/work
+cryptography @ file:///C:/ci/cryptography_1639414690059/work
+Django==3.2.16
+django-phone-field==1.8.1
+idna @ file:///tmp/build/80754af9/idna_1637925883363/work
+menuinst @ file:///C:/ci/menuinst_1631733468337/work
+mysql-connector-python==8.0.30
+Pillow==9.3.0
+protobuf==3.20.1
+psycopg2==2.9.5
+pyaes==1.6.1
+pyasn1==0.4.8
+pycosat==0.6.3
+pycparser @ file:///tmp/build/80754af9/pycparser_1636541352034/work
+pyOpenSSL @ file:///tmp/build/80754af9/pyopenssl_1635333100036/work
+PySocks @ file:///C:/ci/pysocks_1594394709107/work
+python-decouple==3.6
+pytz==2022.7
+pywin32==302
+requests @ file:///opt/conda/conda-bld/requests_1641824580448/work
+rsa==4.9
+ruamel-yaml-conda @ file:///C:/ci/ruamel_yaml_1616016865685/work
+six @ file:///tmp/build/80754af9/six_1623709665295/work
+sqlparse==0.4.3
+Telethon==1.26.0
+tqdm @ file:///tmp/build/80754af9/tqdm_1635330843403/work
+typing_extensions==4.4.0
+urllib3==1.26.7
+win-inet-pton @ file:///C:/ci/win_inet_pton_1605306165655/work
+wincertstore==0.2
